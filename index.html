@@ -1,14 +1,57 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENI MEMORY</title>
     <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 </head>
+
 <body>
-    <h1>ENI MEMORY</h1>
-    <p>Modification index</p>
+    <div class="container-xxl">
+        <h1>ENI - MEMORY - Acceuil</h1>
+
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+
+            <input type="radio" class="btn-check btn-dark" name="btnradio" id="btnradio1" autocomplete="off" checked>
+            <label class="btn btn-outline-dark" for="btnradio1">Acceuil</label>
+
+            <a href="formulaire.html">
+                <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                <label class="btn btn-outline-dark" for="btnradio2">S'inscrire</label>
+            </a>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio3">Se connecter</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio3">Profil</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio3">Jouer</label>
+        </div>
+    </div>
+    <div class="container-lg">
+        <p>Bienvenu sur le site du memory de l'ENI.</p>
+        <p>Venez jouer avec nous et faites le meuilleur score possible.</p>
+        <h2>Règle du jeu : </h2>
+        <ul>
+            <li>Retournez deux cartes. Si celles-ci sont identiques, le jeu laisse les cartes visible.</li>
+            <li>Si elles sont différentes, les cartes se retournent fasse cachée là où elles etaient.</li>
+            <li>La partie est terminée lorsque toute les cartes ont été assemblé par paire.</li>
+        </ul>
+        <img src="../../ENI-Memory-AdrienQ/Projet/Multimedia/Memory-chien-10-paires-I-x-300.jpg" class="img-fluid"
+            alt="Exemple memory">
+        <p>Si vous voulez vous souvenir de votre score, inscrivez-vous via le formulaire.</p>
+        <p>Le jeu garde les 5 meuilleurs score</p>
+        <p>Si vous voulez relancer la partie, appuyez sur la barre d'espace. </p>
+    </div>
+
+
     <script src="js/script.js"></script>
 </body>
+
 </html>

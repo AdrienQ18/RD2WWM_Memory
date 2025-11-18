@@ -1,20 +1,21 @@
-.navigation{
-    display: flex;
-    justify-content: space-around;
-}
-p, h2, .navigation{
-    font-family: sans-serif;
-    color: white;
+body{
+    background: #2A7B9B;
+    background: linear-gradient(325deg, rgba(42, 123, 155, 1) 13%, rgba(87, 199, 133, 1) 52%, rgba(165, 83, 237, 1) 100%);
 }
 .container-lg{
-    min-width: 30rem;
+    max-width: 500px;
     margin-block: 3rem;
-    padding: 3rem;
+    padding-block: 3rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1rem;
     background-color: rgb(44, 42, 42);
+    color: white;
     border-radius: 20px;
+    padding-inline: 5rem;
+}
+
+h1{
     color: white;
 }
 .formulaire{
@@ -23,16 +24,6 @@ p, h2, .navigation{
     flex-direction: column;
     color: white;
     padding: 2rem;
-}
-h2{
-    display: flex;
-    justify-content: center;
-    padding: 2rem;
-}
-.validation{
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
 }
 .input{
     display: flex;
@@ -44,10 +35,6 @@ h2{
     background-color: black;
     color: white;
     padding: 0.5rem;
-}
-body{
-    background: #2A7B9B;
-    background: linear-gradient(325deg, rgba(42, 123, 155, 1) 13%, rgba(87, 199, 133, 1) 52%, rgba(165, 83, 237, 1) 100%);
 }
 .boutons{
     display: flex;

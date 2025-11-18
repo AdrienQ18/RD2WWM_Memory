@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="profil.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-xxl">
+        <h1>ENI - MEMORY - Profil</h1>
+
+        <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> 
+         <input type="radio" class="btn-check btn-dark" name="btnradio" id="btnradio1" autocomplete="off" >
+            <label class="btn btn-outline-dark" for="btnradio1">Acceuil</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio2">S'inscrire</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio3">Se connecter</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off" checked>
+            <label class="btn btn-outline-dark" for="btnradio3">Profil</label>
+
+            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off">
+            <label class="btn btn-outline-dark" for="btnradio3">Jouer</label>
+        </div>
+
+        <div class="container-lg">
+            <h2>Profil</h2>
+            <ul>
+                <li class="input">
+                    <label for="email">Entrez votre adresse mail</label>
+                    <input class="entree" type="text" name="user_email" id="mail" placeholder="Email">
+                </li>
+                <li class="input">
+                    <label for="mdp">Entrez un mot de passe</label>
+                    <input class="entree" type="text" name="user_password" id="password" placeholder="Votre mot de passe">
+                </li>
+            </ul>
+
+            <div class="selection">
+                <label for="pet-select">Choix du memory : </label>
+
+                <select name="pets" id="pet-select">
+                    <option value="">--Choisissez une option--</option>
+                    <option value="Chien">Chien</option>
+                    <option value="Animaux">Animaux</option>
+                    <option value="Monstres">Monstres</option>
+                    <option value="Ronds colorés">Ronds colorés</option>
+                </select>
+            </div>
+
+        </div>
+    </div>
+</body>
+</html>

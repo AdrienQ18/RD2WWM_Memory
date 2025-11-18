@@ -1,0 +1,50 @@
+body {
+    background: #2A7B9B;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: linear-gradient(325deg, rgba(42, 123, 155, 1) 13%, rgba(87, 199, 133, 1) 52%, rgba(165, 83, 237, 1) 100%);
+}
+
+.container-lg {
+    max-width: 500px;
+    margin-block: 3rem;
+    padding-block: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
+    background-color: rgb(44, 42, 42);
+    color: white;
+    border-radius: 20px;
+    padding-inline: 5rem;
+}
+
+h1 {
+    color: white;
+}
+.formulaire{
+    gap: 3rem;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 2rem;
+}
+.input{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-inline: 3rem;
+}
+.entree{
+    background-color: black;
+    color: white;
+    padding: 0.5rem;
+}
+.boutons{
+    display: flex;
+    justify-content: center;
+}
+h2{
+    text-align: center;
+}

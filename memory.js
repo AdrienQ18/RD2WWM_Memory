@@ -85,4 +85,5 @@ function checkForMatch() {
     secondCard = null;
     console.log(successCounter);
     console.log(tryCounter);
+    console.log("bouh");
 }

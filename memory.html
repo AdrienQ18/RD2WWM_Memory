@@ -14,22 +14,12 @@
     <div class="container-xxl">
         <h1>ENI - MEMORY - Jouer</h1>
 
-        <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
-            <input type="radio" class="btn-check btn-dark" name="btnradio" id="btnradio1" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btnradio1">Acceuil</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btnradio2">S'inscrire</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btnradio3">Se connecter</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio4" autocomplete="off">
-            <label class="btn btn-outline-dark" for="btnradio3">Profil</label>
-
-            <input type="radio" class="btn-check" name="btnradio" id="btnradio5" autocomplete="off" checked>
-            <label class="btn btn-outline-dark" for="btnradio3">Jouer</label>
-
+        <div class="btn-group">
+            <a href="index.html" class="btn btn-dark d-flex align-items-center justify-content-center">Accueil</a>
+            <a href="./formulaire.html" class="btn btn-dark d-flex align-items-center justify-content-center">S'inscrire</a>
+            <a href="./connection.html" class="btn btn-dark d-flex align-items-center justify-content-center">Se connecter</a>
+            <a href="./profil.html" class="btn btn-dark d-flex align-items-center justify-content-center">Profil</a>
+            <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center active">Jouer</a>
         </div>
 
         <div>
@@ -37,7 +27,6 @@
 
                 <div class="selection">
                     <label for="pet-select">Choix du memory : </label>
-
                     <select name="pets" id="pet-select">
                         <option value="">--Choisissez une option--</option>
                         <option value="0">Chien</option>
@@ -50,31 +39,11 @@
 
                     <h2>Règles du jeu : tentez de gagner avec le moins d'essais possible</h2>
                     <h2>Appuyez sur la barre d'espace pour relancer le jeu.</h2>
+                    <p>Nombre de coup : </p>
 
-
-                <!-- <div class="memory">
-                    <img src="Projet/Multimedia/chien1/dog_01.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_01.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_02.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_02.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_03.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_03.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_04.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_04.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_05.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_05.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_07.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_07.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_08.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_08.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_09.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_09.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_10.png" alt="">
-                    <img src="Projet/Multimedia/chien1/dog_10.png" alt="">
-                </div> -->
 
                 <div class="container text-center">
-                    <div id="grid" class="row row-cols-3">
+                    <div id="grid" class="row row-cols-md-2 ">
                         <!-- <div class="col">Column</div>
                     <div class="col">Column</div>
                     <div class="col">Column</div>

@@ -68,6 +68,7 @@ let secondCard = null;
 let tryCounter = 0;
 //Compte le nombre de succes
 let successCounter = 0;
+//Permet d'afficher le memory en selectionnant l'élement qui a l'id "grid"
 const gridElement = document.getElementById("grid");
 
 bankSelection();
@@ -149,7 +150,7 @@ buildGrid();
 //Gere l'action d'un clic sur une carte (L'index correspond à l'Id et vis versa)
 function flipCard(index) {
     console.log("clic on ", index);
-    //Ontest si la carte n'est pas déjà retournée
+    //On test si la carte n'est pas déjà retournée
     if (isClickable(index)) {
         //Detection d'un click sur la 1er carte 
         if (firstCard === null) {
@@ -173,7 +174,7 @@ function flipCard(index) {
     }
 }
 
-//Fonction permet de tester si les deux cartes sont identiques
+//Fonction permet de tester si les deux cartes sont identiques ou non 
 function checkForMatch() {
     //Récupération du nom des images à partir des index de la 1er et 2nd carte
     let firstCardValue = tabCards[firstCard];
@@ -209,7 +210,9 @@ function isClickable(index) {
     return document.getElementById(index).style.backgroundImage === 'url("images/backSide.png")';
 }
 
-function bankSelection(){
+victoire();
+
+function bankSelection() {
     let bankSelectorElement = document.getElementById("pet-select");
     bankSelectorElement.addEventListener("select", () => {
         console.log("Changé ! ", bankSelectorElement.value);
@@ -218,5 +221,10 @@ function bankSelection(){
         buildGrid();
         console.log(tabCards);
     });
-    
+}
+
+function victoire (){
+    successCounter = (tabCards) / 2;
+    console.log("Partie terminée");
+    alert("Vous avez trouvé toute les paires");
 }

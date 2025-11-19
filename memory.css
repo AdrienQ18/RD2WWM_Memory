@@ -1,8 +1,6 @@
 body{
     background: #2A7B9B;
     background: linear-gradient(325deg, rgba(42, 123, 155, 1) 13%, rgba(87, 199, 133, 1) 52%, rgba(165, 83, 237, 1) 100%);
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 .container-lg{
     max-width: 500px;
@@ -22,7 +20,7 @@ body{
     flex-direction: column;
     width: 25vw;
 }
-h2{
+h2, p{
     text-align: center;
 }
 .cellule{
@@ -33,4 +31,7 @@ h2{
     display: block;
     margin: 10px;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: 10px 5px 5px black;
 }
+

@@ -15,8 +15,13 @@ body {
     color: white;
     border-radius: 20px;
     padding-inline: 5rem;
+    align-items: center;
 }
 
 h1 {
     color: white;
+}
+
+.img-fluid{
+    width: 60rem;
 }

@@ -25,3 +25,12 @@ body{
 h2{
     text-align: center;
 }
+.cellule{
+    height: 135px;
+    width: 135px;
+    background-image: url("images/backSide.png");
+    background-repeat: no-repeat;
+    display: block;
+    margin: 10px;
+    text-align: center;
+}

@@ -16,8 +16,10 @@
 
         <div class="btn-group">
             <a href="index.html" class="btn btn-dark d-flex align-items-center justify-content-center">Accueil</a>
-            <a href="./formulaire.html" class="btn btn-dark d-flex align-items-center justify-content-center">S'inscrire</a>
-            <a href="./connection.html" class="btn btn-dark d-flex align-items-center justify-content-center">Se connecter</a>
+            <a href="./formulaire.html"
+                class="btn btn-dark d-flex align-items-center justify-content-center">S'inscrire</a>
+            <a href="./connection.html" class="btn btn-dark d-flex align-items-center justify-content-center">Se
+                connecter</a>
             <a href="./profil.html" class="btn btn-dark d-flex align-items-center justify-content-center">Profil</a>
             <a href="#" class="btn btn-dark d-flex align-items-center justify-content-center active">Jouer</a>
         </div>
@@ -27,36 +29,25 @@
 
                 <div class="selection">
                     <label for="pet-select">Choix du memory : </label>
-                    <select name="pets" id="pet-select">
-                        <option value="">--Choisissez une option--</option>
+                    <select name="pets" id="pet-select" class="form-select">
+                        <option selected>--Choisissez une option--</option>
                         <option value="0">Chien</option>
-                        <option value="3">Animaux</option>
                         <option value="1">Monstres</option>
                         <option value="2">Ronds colorés</option>
+                        <option value="3">Animaux</option>
                     </select>
                 </div>
 
-
-                    <h2>Règles du jeu : tentez de gagner avec le moins d'essais possible</h2>
-                    <h2>Appuyez sur la barre d'espace pour relancer le jeu.</h2>
-                    <p>Nombre de coup : </p>
+                <h2>Règles du jeu : tentez de gagner avec le moins d'essais possible</h2>
+                <h2>Appuyez sur la barre d'espace pour relancer le jeu.</h2>
+                <p>Nombre de coup : <span id="nbCoup"></span></p>
 
 
                 <div class="container text-center">
-                    <div id="grid" class="row row-cols-md-2 ">
-                        <!-- <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div>
-                    <div class="col">Column</div> -->
+                    <div id="grid" class="flex-container">
                     </div>
+                    <!-- <div id="grid" class="row row-cols-md-2 ">
+                    </div>-->
                 </div>
             </div>
         </div>

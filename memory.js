@@ -70,8 +70,14 @@ let tryCounter = 0;
 let successCounter = 0;
 //Permet d'afficher le memory en selectionnant l'élement qui a l'id "grid"
 const gridElement = document.getElementById("grid");
+//Element du dom permettant de selectionner la banque d'image
+const bankSelectorElement = document.getElementById("pet-select");
+//Initialisation du selecteur par imageType
+bankSelectorElement.value = imagesType;
+const nbCoupElement = document.getElementById("nbCoup");
 
 bankSelection();
+
 //Mélange aléatoire des cartes : Fisher-Yates
 function shuffleCard() {
     for (let i = tabCards.length - 1; i > 0; i--) {
@@ -85,31 +91,42 @@ function shuffleCard() {
 
 
 function buildGrid() {
+    // reset des compteurs
+    tryCounter = 0;
+    successCounter = 0;
+    nbCoupElement.innerHTML = '';
+
+    // reset des index de cartes selectionnées
+    firstCard = null;
+    secondCard = null;
+
     //Choix de la grille 
-    switch (displayType) {
-        case 0:
-            gridElement.setAttribute("class", "row row-cols-3");
-            break;
-        case 1:
-            gridElement.setAttribute("class", "row row-cols-4");
-            break
-        case 2:
-            gridElement.setAttribute("class", "row row-cols-5");
-            break
-        case 3:
-            gridElement.setAttribute("class", "row row-cols-6");
-            break
-        default:
-            gridElement.setAttribute("class", "row row-cols-3");
-            break;
-    }
+    // switch (displayType) {
+    //     case 0:
+    //         gridElement.setAttribute("class", "row row-cols-3");
+    //         break;
+    //     case 1:
+    //         gridElement.setAttribute("class", "row row-cols-4");
+    //         break
+    //     case 2:
+    //         gridElement.setAttribute("class", "row row-cols-5");
+    //         break
+    //     case 3:
+    //         gridElement.setAttribute("class", "row row-cols-6");
+    //         break
+    //     default:
+    //         gridElement.setAttribute("class", "row row-cols-3");
+    //         break;
+    // }
     //choix de la banque d'image
+
+    tabCards = [];
     switch (imagesType) {
         case 0:
-            tabCards = [].concat(chiens);
+            tabCards = chiens;
             break;
         case 1:
-            tabCards = [].concat(monstres);
+            tabCards = [].concat(monstres);//todo remove concat
             break;
         case 2:
             tabCards = [].concat(couleurs);
@@ -122,29 +139,24 @@ function buildGrid() {
             break;
     }
 
+
     //Mélange des cartes du tableau
     shuffleCard();
 
     //Remplissage de la grille, parcour le tableau de cartes
     for (let i = 0; i < tabCards.length; i++) {
-        //Pour chaque carte on céer un élément HTML corespondant à une cellule bootstrap
+        //Création d'un élement html contenant l'image de la carte
         const cardElement = document.createElement("div");
-        //Configuration de la class de l'élement bootstrap
-        cardElement.setAttribute("class", "col");
-
-        //Création d'une div dans la div pour centrer la grid (qui contien l'image)
-        const imgElement = document.createElement("div");
         //Permet d'attribuer un id à une image, cet id est égale à l'index du tableau 
-        imgElement.setAttribute("id", i);
-        imgElement.setAttribute("class", "cellule");
-        imgElement.style.backgroundImage = 'url("images/backSide.png")';
-        imgElement.addEventListener("click", () => flipCard(i));
-        cardElement.appendChild(imgElement);
-        //Ajout de l'élément dans la grille
+        cardElement.setAttribute("id", i);
+        cardElement.setAttribute("class", "cellule");
+        cardElement.style.backgroundImage = 'url("images/backSide.png")';
+        cardElement.addEventListener("click", () => flipCard(i));
+        //Cet element "cardElement" est ensuite ajouté à la grille
         gridElement.appendChild(cardElement);
     }
 }
-//Construction du jeu 
+//Construction du jeu a l'ouverture de la page
 buildGrid();
 
 //Gere l'action d'un clic sur une carte (L'index correspond à l'Id et vis versa)
@@ -160,6 +172,7 @@ function flipCard(index) {
             //Modification de l'image lors du clic
             imageCardElement.style.backgroundImage = `url("${tabCards[index]}")`;
         } else {
+            //La première carte est déjà retournée
             //Détection d'un click sur la 2eme
             if (secondCard === null && firstCard !== index) {
                 secondCard = index;
@@ -167,6 +180,7 @@ function flipCard(index) {
                 //Modification de l'image lors du clic
                 imageCardElement.style.backgroundImage = `url("${tabCards[index]}")`;
                 tryCounter++;
+                nbCoupElement.innerHTML = tryCounter;
                 //Test l'égalité des cartes
                 checkForMatch();
             }
@@ -186,6 +200,9 @@ function checkForMatch() {
         //Reset des index précédent pour un nouvel essai
         firstCard = null;
         secondCard = null;
+        if (successCounter === tabCards.length/2){
+            victoire();
+        }
     } else {
         console.log("Pas trouvé");
         setTimeout(hideCard, 1000);
@@ -210,13 +227,16 @@ function isClickable(index) {
     return document.getElementById(index).style.backgroundImage === 'url("images/backSide.png")';
 }
 
-victoire();
+
 
 function bankSelection() {
-    let bankSelectorElement = document.getElementById("pet-select");
-    bankSelectorElement.addEventListener("select", () => {
+    //ON ajoute un écouteur d'évenement sur le selecteur de banque d'image
+    bankSelectorElement.addEventListener("change", () => {
         console.log("Changé ! ", bankSelectorElement.value);
-        imagesType = bankSelectorElement.value;
+        //la value du selecteur est une string, alors on attends un entier dans le switch qui selectionne le set de carte.
+        //Le + permet de transformer une chaine de caractére contenant un chiffre en number
+        imagesType = +bankSelectorElement.value;
+        //ON clear la grille d'élément avant de la reconstruire
         gridElement.textContent = "";
         buildGrid();
         console.log(tabCards);
@@ -226,5 +246,5 @@ function bankSelection() {
 function victoire (){
     successCounter = (tabCards) / 2;
     console.log("Partie terminée");
-    alert("Vous avez trouvé toute les paires");
+    alert("Vous avez trouvé toute les paires en " + tryCounter + " coups");
 }

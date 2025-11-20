@@ -1,6 +1,10 @@
 body {
-    background: #2A7B9B;
-    background: linear-gradient(325deg, rgba(42, 123, 155, 1) 13%, rgba(87, 199, 133, 1) 52%, rgba(165, 83, 237, 1) 100%);
+    background: #056916;
+    background: linear-gradient(90deg, rgba(5, 105, 22, 1) 0%, rgba(0, 0, 0, 1) 100%);
+}
+
+.container-xxl {
+    color: white;
 }
 
 .container-lg {
@@ -12,15 +16,15 @@ body {
     justify-content: center;
     gap: 1rem;
     background-color: rgb(44, 42, 42);
-    color: white;
     border-radius: 20px;
     padding-inline: 5rem;
     align-items: center;
-}
-h1 {
-    color: white;
+    border: 2px solid white;
+    box-shadow: inset 5px 5px 5px 5px black;
 }
 
-.img-fluid{
+
+.img-fluid {
     width: 60rem;
 }
+

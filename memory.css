@@ -1,8 +1,13 @@
-body{
-    background: #2A7B9B;
-    background: linear-gradient(325deg, rgba(42, 123, 155, 1) 13%, rgba(87, 199, 133, 1) 52%, rgba(165, 83, 237, 1) 100%);
+body {
+    background: #056916;
+    background: linear-gradient(90deg, rgba(5, 105, 22, 1) 0%, rgba(0, 0, 0, 1) 100%);
 }
-.container-lg{
+
+.container-xxl {
+    color: white;
+}
+
+.container-lg {
     max-width: 500px;
     margin-block: 3rem;
     padding-block: 3rem;
@@ -10,39 +15,54 @@ body{
     flex-direction: column;
     gap: 2rem;
     background-color: rgb(44, 42, 42);
-    color: white;
     border-radius: 20px;
+    border: 2px solid white;
+    box-shadow: inset 5px 5px 5px 5px black;
 }
 
-.selection{
-    color: white;
+.selection {
     display: flex;
     flex-direction: column;
     width: 25vw;
+    margin-left: 4rem;
+    margin-bottom: 3rem;
 }
-h2, p{
+
+h2,
+p {
     text-align: center;
 }
-.flex-container{
+
+.flex-container {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     justify-content: center;
 }
-.cellule{
+
+.cellule {
     height: 135px;
     width: 135px;
     background-image: url("images/backSide.png");
     background-repeat: no-repeat;
     display: block;
-    /* margin: 10px; */
     text-align: center;
     border-radius: 10px;
     box-shadow: 5px 5px 5px black;
     cursor: pointer;
-    transition : transform 200ms ease-in-out;
-    transition: background-image 200ms ease-out;
+    transition: all 0.2s ease-out;
 }
-.cellule:hover{
+
+.cellule:hover {
     transform: scale(1.1);
+}
+
+.set{
+    background: #056916;
+    background: linear-gradient(90deg, rgba(5, 105, 22, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    border-radius: 10px;
+    padding-block: 3rem;
+    border: 2px solid white;
+    margin-inline: 2rem;
+    box-shadow: 5px 5px 5px 5px black;
 }

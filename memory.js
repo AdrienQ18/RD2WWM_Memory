@@ -55,9 +55,6 @@ const animaux = [
     'images/animals/animal_15.png', 'images/animals/animal_15.png'
 ];
 
-
-//Nombre de colonnes et de lignes
-let displayType = 3;
 //Selection du mode de jeu (chien, animaux etc etc ) : la banque d'image
 let imagesType = 3;
 //Création du tableau
@@ -89,7 +86,6 @@ function shuffleCard() {
     }
 }
 
-
 function buildGrid() {
     // reset des compteurs
     tryCounter = 0;
@@ -100,45 +96,25 @@ function buildGrid() {
     firstCard = null;
     secondCard = null;
 
-    //Choix de la grille 
-    // switch (displayType) {
-    //     case 0:
-    //         gridElement.setAttribute("class", "row row-cols-3");
-    //         break;
-    //     case 1:
-    //         gridElement.setAttribute("class", "row row-cols-4");
-    //         break
-    //     case 2:
-    //         gridElement.setAttribute("class", "row row-cols-5");
-    //         break
-    //     case 3:
-    //         gridElement.setAttribute("class", "row row-cols-6");
-    //         break
-    //     default:
-    //         gridElement.setAttribute("class", "row row-cols-3");
-    //         break;
-    // }
     //choix de la banque d'image
-
     tabCards = [];
     switch (imagesType) {
         case 0:
             tabCards = chiens;
             break;
         case 1:
-            tabCards = [].concat(monstres);//todo remove concat
+            tabCards = monstres;
             break;
         case 2:
-            tabCards = [].concat(couleurs);
+            tabCards = couleurs;
             break;
         case 3:
-            tabCards = [].concat(animaux);
+            tabCards = animaux;
             break;
         default:
-            tabCards = [].concat(chiens);
+            tabCards = chiens;
             break;
     }
-
 
     //Mélange des cartes du tableau
     shuffleCard();
@@ -207,7 +183,6 @@ function checkForMatch() {
         console.log("Pas trouvé");
         setTimeout(hideCard, 1000);
     }
-
     console.log(successCounter);
     console.log(tryCounter);
 }
@@ -227,24 +202,43 @@ function isClickable(index) {
     return document.getElementById(index).style.backgroundImage === 'url("images/backSide.png")';
 }
 
-
-
 function bankSelection() {
     //ON ajoute un écouteur d'évenement sur le selecteur de banque d'image
     bankSelectorElement.addEventListener("change", () => {
         console.log("Changé ! ", bankSelectorElement.value);
-        //la value du selecteur est une string, alors on attends un entier dans le switch qui selectionne le set de carte.
-        //Le + permet de transformer une chaine de caractére contenant un chiffre en number
+        //la value du selecteur est une string, alors qu'on attend un entier dans le switch qui selectionne le set de carte.
+        //Le + permet de transformer une chaine de caractére contenant en number
         imagesType = +bankSelectorElement.value;
-        //ON clear la grille d'élément avant de la reconstruire
+        //On clear la grille d'élément avant de la reconstruire
         gridElement.textContent = "";
         buildGrid();
-        console.log(tabCards);
     });
 }
 
 function victoire (){
     successCounter = (tabCards) / 2;
     console.log("Partie terminée");
-    alert("Vous avez trouvé toute les paires en " + tryCounter + " coups");
+    if(successCounter > 20){
+            alert("Vous avez trouvé toute les paires en " + tryCounter + " coups ! Bravo !");
+    }else{
+        alert("Vous Vous avez trouvé toute les paires en " + tryCounter + " coups ! Pas terrible...")
+    }
+
 }
+
+document.addEventListener('keydown', (event) =>{
+
+    if (event.code === 'Space') {
+  
+      console.log('Space key pressed');
+  
+      // effacer le contenu du plateu de jeu
+  
+      gridElement.innerHTML = '';
+  
+      // reconstruire la grille
+  
+      buildGrid();
+  
+    }
+})
